@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper > div {
+  padding: 1em;
+  background: #eee;
+}
+
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+.wrapper {
+  display: grid;
+  /*this divides elements into the grid into 3 fractional columns, or however man you specifity. */
+  /*each of which is 1/3, because theres 3 of them*/
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  /*you can shorthand this as follows*/
+  grid-template-columns: repeat(3, 1fr);
+  /*height can be set in different ways*/
+  /*grid-auto-rows: 100px;*/
+  /*this is badass - allows setting of minimum height, but expandable to contain content*/
+  /*auto will apply to every element within that row of the grid*/
+  grid-auto-rows: minmax(100px, auto);
+}
+
+/*you can nest grids as well, which would allow for layouts of arbitrary complexity*/
+
+.nested {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 90px;
+}
+
+.nested > div {
+  border: 1px solid #333;
+  padding: 1em;
+}

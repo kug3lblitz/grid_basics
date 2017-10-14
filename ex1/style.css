@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.wrapper > div {
+  padding: 1em;
+  background: #eee;
+}
+
+.wrapper > div:nth-child(odd) {
+  background: #ddd;
+}
+
+/*below, i've set my grid-template-columns to 70% 30%. This setting is repeated, no matter how many divs I add to the html*/
+/*so, for every two divs, I get this pattern applied. this is way nicer than flexbox*/
+/*This works for anything, really. so if I said 40% 30% 30, we would get a wrap effect for numbers of divs that aren't multiples of 3*/
+.wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /*grid-column-gap: 1em;*/
+  /*grid-row-gap: 1em;*/
+  /*combination of row and column gap*/
+  grid-gap: 1em;
+}
+
